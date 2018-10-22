@@ -1,43 +1,49 @@
-//console.log("you made it to the LandscapePortrait5.js!")
+//console.log("I made it to Landscape and Portrait!"); //Debugging line to console ensuring JavaScript Link
 
 let stop = false;
 
-fucntion testNaN (number) {
-console.log(stop);
-if ( isNan (number) )
-stop = true;
-return "type a real number"
-} else {
-  return "input validated"
+function testNaN (number) {
+  console.log(stop);
+  if ( isNaN (number) ) { //NaN are NOT values of REAL Number System
+    stop = true;
+    return "Type a Real Number"
+  } else {
+    return "Input Validated"
+  }
 }
-function geometry (width, height) {
 
-  function main () {
-    let firstNumber, secondNumber, text;
+function geometry (width, height) { //Notice these parameters are local and do not mix with "number" variable
+  if (width == height) return 'Square'; //must be first, return will not allow rest of code to run
+  return (width > height) ? 'Landscape' : 'Portrait'; //ternary operator example
+  //Seems odd, the inequality, here, is reading the opposite
+}
 
+// This coding illustrates the advanced method
+function main () {
 
-      // get the value of the width input field, id="textfield1"
-      firstNumber = document.getElementby id("textfield1").value;
+  let firstNumber, secondNumber, text;
 
-    //Validate if user typed a number, odd validation by true conditonal
+  // Get the value of the Width Input Field, id="textfield1"
+  firstNumber = document.getElementById("textfield1").value;
 
-    document.getElementbyId("validityTest1").innerhtml= alert( testNaN (firstNumber));
-    document.getElementbyId("validityTest1").innerhtml= testNan (firstNumber);
+  //Validate if User Typed a Number, odd validation by TRUE Conditional
+  //Return the String Value for feedback of User
+  document.getElementById("validityTest1").innerHTML = alert( testNaN (firstNumber) );
+  document.getElementById("validityTest1").innerHTML = testNaN (firstNumber);
 
-    // get the value of the height input field ide = textfield2
-    secondNumber = document.getElementbyId("textfield2").value;
+  // Get the value of the Height Input Field, id="textfield2"
+  secondNumber = document.getElementById("textfield2").value;
 
-    secondNumber = document.getElementbyId("validityTest2").innerHTML = alert(testNan (secondNumber) );
-    secondNumber = document.getElementbyId("validityTest2").innerHTML = testNaN (secondNumber);
+  //Validate if User Typed a Number, odd validation by TRUE Conditional
+  //Return the String Value for feedback of User
+  document.getElementById("validityTest2").innerHTML = alert( testNaN (secondNumber) );
+  document.getElementById("validityTest2").innerHTML = testNaN (secondNumber);
 
-    if (stop == true) {
-      document.getElementbyId("large").innerHTML = "restart because i said so." //change to more appropriate message
-    }
-    else {
-        console.log("What did you say"). geometry (firstNumber, secondNumber));
-        document.getElementbyId("large").innerHTML = "What did you say" + geometry (firstNumber, secondNumber);
-      }
-    }
-// this coding illustrated the advanced method
-    let firstNumber. secondnumber, text;
-    console.log(stop);
+  if (stop == true) {
+    document.getElementById("answer").innerHTML = "Restart the example, an width or height needs to be a number."
+  }
+  else {
+    console.log("This display geometry is", geometry (firstNumber, secondNumber)); //Difference between calling functions with arguements and sending to parameter's, local variables
+    document.getElementById("answer").innerHTML = "This display geometry is " + geometry (firstNumber, secondNumber);
+  }
+}

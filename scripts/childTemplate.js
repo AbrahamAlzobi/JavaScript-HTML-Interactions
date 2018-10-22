@@ -1,28 +1,29 @@
-console.log("you made it to the childTemplate.js!")//Debugging line to console ensuring JavaScript link
+console.log("I made it to childTemplate.js!"); //Debugging line to console ensuring JavaScript Link
 
-function main (){
-  let firstNumber, secondNumber, text;
+function main () {
 
+  let firstNumber, secondNumber; //Variables particular to JavaScript Assignment, makes it work
 
-  // get the value of the width input field, id="textfield1"
-  firstNumber = document.getElementby id("textfield1").value;
+  // Get the value of the Height Input Field, id="textfield1"
+  firstNumber = document.getElementById("textfield1").value;
 
-//Validate if user typed a number, odd validation by true conditonal
+  //Validate by ALERT or HTML Text in p-tag
+  document.getElementById("validityTest1").innerHTML = alert( testNaN (firstNumber) );
+  document.getElementById("validityTest1").innerHTML = testNaN (firstNumber);
 
-document.getElementbyId("validityTest1").innerhtml= alert( testNaN (firstNumber));
-document.getElementbyId("validityTest1").innerhtml= testNan (firstNumber);
+  // Get the value of the Height Input Field, id="textfield2"
+  secondNumber = document.getElementById("textfield2").value;
 
-// get the value of the height input field ide = textfield2
-secondNumber = document.getElementbyId("textfield2").value;
+  //Validate by ALERT or HTML Text in p-tag
+  document.getElementById("validityTest2").innerHTML = alert( testNaN (secondNumber) );
+  document.getElementById("validityTest2").innerHTML = testNaN (secondNumber);
 
-secondNumber = document.getElementbyId("validityTest2").innerHTML = alert(testNan (secondNumber) );
-secondNumber = document.getElementbyId("validityTest2").innerHTML = testNaN (secondNumber);
-
-if (stop == true) {
-  document.getElementbyId("large").innerHTML = "restart because i said so." //change to more appropriate message
-}
-else {
-    console.log("What did you say"). geometry (firstNumber, secondNumber));
-    document.getElementbyId("large").innerHTML = "What did you say" + geometry (firstNumber, secondNumber);
+  if (stop == true) {
+    document.getElementById("answer").innerHTML = "Restart because I said so." //Change to more appropriate message
+  }
+  else {
+    //Difference between calling functions with arguements and sending to parameter's, local variables
+    console.log("What did you say?", geometry (firstNumber, secondNumber)); // Change to more appropriate message
+    document.getElementById("answer").innerHTML = "What did you say? " + geometry (firstNumber, secondNumber);
   }
 }
